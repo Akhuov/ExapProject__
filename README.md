@@ -21,6 +21,8 @@ about:
 
   School ManageSystem platform for manage and storage students and teachers informations
 
+Projects created with clean architecture(MediatR) and with async methods!
+
 
 
 
