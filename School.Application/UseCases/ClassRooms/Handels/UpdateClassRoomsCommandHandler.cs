@@ -2,10 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using School.Application.Absreactions;
 using School.Application.UseCases.Classes.Commands;
+using School.Application.UseCases.ClassRooms.Commands;
 
-namespace School.Application.UseCases.Classes.Handles
+namespace School.Application.UseCases.ClassRooms.Handles
 {
-    public class UpdateClassRoomsCommandHandler : IRequestHandler<UpdateClassCommand, bool>
+    public class UpdateClassRoomsCommandHandler : IRequestHandler<UpdateClassRoomCommand, bool>
     {
         private readonly IApplicationDbContext _applicationDbContext;
 
@@ -14,21 +15,19 @@ namespace School.Application.UseCases.Classes.Handles
             _applicationDbContext = applicationDbContext;
         }
 
-        public async Task<bool> Handle(UpdateClassCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(UpdateClassRoomCommand request, CancellationToken cancellationToken)
         {
             try
             {
-                var res = await _applicationDbContext.Classes.FirstOrDefaultAsync(x => x.Id == request.Id);
+                var res = await _applicationDbContext.ClassRooms.FirstOrDefaultAsync(x => x.Id == request.Id);
 
                 if (res != null)
                 {
-                    res.SubjectId = request.SubjectId;
-                    res.TeacherId = request.TeacherId;
-                    res.ClassRoomId = request.ClassRoomId;
-                    res.Time = request.Time;
-                    res.Period = request.Period;
+                    res.Capacity = request.Capacity;
+                    res.Facilities = request.Facilities;
+                    res.RoomType = request.RoomType;
 
-                    _applicationDbContext.Classes.Update(res);
+                    _applicationDbContext.ClassRooms.Update(res);
                     await _applicationDbContext.SaveChangesAsync(cancellationToken);
                     return true;
                 }

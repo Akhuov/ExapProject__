@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace School.Application.UseCases.Classes.Commands
+namespace School.Application.UseCases.ClassRooms.Commands
 {
     public class DeleteClassRoomCommand : IRequest<bool>
     {

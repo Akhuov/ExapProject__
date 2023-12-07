@@ -5,11 +5,11 @@ using School.Domain.Entities;
 
 namespace School.Application.UseCases.Classes.Handles
 {
-    public class CreateClassCommandHandler : IRequestHandler<CreateClassCommand, bool>
+    public class CreateClassRoomsCommandHandler : IRequestHandler<CreateClassCommand, bool>
     {
         private readonly IApplicationDbContext _applicationDbContext;
 
-        public CreateClassCommandHandler(IApplicationDbContext applicationDbContext)
+        public CreateClassRoomsCommandHandler(IApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }
