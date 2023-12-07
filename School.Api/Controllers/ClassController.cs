@@ -1,14 +1,12 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using School.Api.Dtos;
 using School.Application.UseCases.Classes.Commands;
-using School.Application.UseCases.Subjects.Commands;
-using School.Application.UseCases.Subjects.Querries;
+using School.Application.UseCases.Classes.Querries;
 
 namespace School.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class ClassController : ControllerBase
     {
@@ -19,14 +17,17 @@ namespace School.Api.Controllers
         }
 
         [HttpPost]
-        public async ValueTask<IActionResult> CreateClassAsync(ClassDto dto)
+        public async ValueTask<IActionResult> CreateClassRoomAsync(ClassDto dto)
         {
             try
             {
                 var command = new CreateClassCommand
                 {
-                    Requirements = dto.Requirements,
-                    MaxCampacity = dto.MaxCampacity,
+                    SubjectId = dto.SubjectId,
+                    ClassRoomId = dto.ClassRoomId,
+                    Period = dto.Period,
+                    TeacherId = dto.TeacherId,
+                    Time = dto.Time,
                 };
 
                 var res = await _mediator.Send(command);
@@ -36,38 +37,42 @@ namespace School.Api.Controllers
         }
 
         [HttpGet]
-        public async ValueTask<IActionResult> GetAllSubjectAsync()
+        public async ValueTask<IActionResult> GetAllClassAsync()
         {
             try
             {
-                var res = await _mediator.Send(new GetAllSubjectCommand());
+                var res = await _mediator.Send(new GetAllClassCommand());
                 return Ok(res);
             }
             catch (Exception ex) { return BadRequest(ex); }
         }
 
         [HttpGet]
-        public async ValueTask<IActionResult> GetByIdSubjectAsync(int id)
+        public async ValueTask<IActionResult> GetByIdClassAsync(int id)
         {
             try
             {
-                var res = await _mediator.Send(new GetByIdSubjectCommand { Id = id });
+                var res = await _mediator.Send(new GetByIdClassCommand { Id = id });
                 return Ok(res);
             }
             catch (Exception ex) { return BadRequest(ex); }
         }
 
         [HttpPut]
-        public async ValueTask<IActionResult> UpdateSubjectAsync(int id, SubjectDto dto)
+        public async ValueTask<IActionResult> UpdateClassRoomAsync(int id, ClassDto dto)
         {
             try
             {
-                var command = new UpdateSubjectCommand
+                var command = new UpdateClassCommand
                 {
                     Id = id,
 
-                    MaxCampacity = dto.MaxCampacity,
-                    Requirements = dto.Requirements,
+                    SubjectId = dto.SubjectId,
+                    ClassRoomId = dto.ClassRoomId,
+                    Period = dto.Period,
+                    TeacherId = dto.TeacherId,
+                    Time = dto.Time,
+
                 };
 
                 var res = await _mediator.Send(command);
@@ -78,11 +83,11 @@ namespace School.Api.Controllers
 
 
         [HttpDelete]
-        public async ValueTask<IActionResult> DeleteSubjectAsync(int id)
+        public async ValueTask<IActionResult> DeleteClassAsync(int id)
         {
             try
             {
-                var res = await _mediator.Send(new DeleteSubjectCommand { Id = id });
+                var res = await _mediator.Send(new DeleteClassCommand { Id = id });
                 return Ok(res);
             }
             catch (Exception ex) { return BadRequest(ex); }

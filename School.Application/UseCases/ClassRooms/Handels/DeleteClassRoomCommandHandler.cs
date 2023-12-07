@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using School.Application.Absreactions;
-using School.Application.UseCases.Classes.Commands;
+using School.Application.UseCases.ClassRooms.Commands;
 
 namespace School.Application.UseCases.ClassRooms.Handles
 {

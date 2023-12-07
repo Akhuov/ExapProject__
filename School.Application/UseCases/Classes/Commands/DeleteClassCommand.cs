@@ -2,7 +2,7 @@
 
 namespace School.Application.UseCases.Classes.Commands
 {
-    public class DeleteClassRoomCommand : IRequest<bool>
+    public class DeleteClassCommand : IRequest<bool>
     {
         public int Id { get; set; }
     }

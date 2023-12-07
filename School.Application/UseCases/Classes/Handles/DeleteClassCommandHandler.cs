@@ -5,7 +5,7 @@ using School.Application.UseCases.Classes.Commands;
 
 namespace School.Application.UseCases.Classes.Handles
 {
-    public class DeleteClassRoomCommandHandler : IRequestHandler<DeleteClassRoomCommand, bool>
+    public class DeleteClassRoomCommandHandler : IRequestHandler<DeleteClassCommand, bool>
     {
         private readonly IApplicationDbContext _applicationDbContext;
 
@@ -14,7 +14,7 @@ namespace School.Application.UseCases.Classes.Handles
             _applicationDbContext = applicationDbContext;
         }
 
-        public async Task<bool> Handle(DeleteClassRoomCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(DeleteClassCommand request, CancellationToken cancellationToken)
         {
             try
             {

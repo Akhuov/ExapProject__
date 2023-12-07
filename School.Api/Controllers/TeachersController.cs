@@ -1,8 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using School.Api.Dtos;
-using School.Application.UseCases.Students.Commands;
-using School.Application.UseCases.Students.Querries;
 using School.Application.UseCases.Teachers.Commands;
 using School.Application.UseCases.Teachers.Querries;
 
@@ -87,7 +85,7 @@ namespace School.Api.Controllers
         {
             try
             {
-                var res = await _mediator.Send(new DeleteTeacherCommand {Id = id });
+                var res = await _mediator.Send(new DeleteTeacherCommand { Id = id });
                 return Ok(res);
             }
             catch (Exception ex) { return BadRequest(ex); }

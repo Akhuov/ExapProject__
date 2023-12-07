@@ -9,7 +9,7 @@ using School.Application.UseCases.Subjects.Querries;
 
 namespace School.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class SubjectsController : ControllerBase
     {
