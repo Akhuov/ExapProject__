@@ -24,6 +24,23 @@ about:
 Projects created with clean architecture(MediatR) and with async methods!
 
 
+Warning : Before Run Check Connection String in appsettings and  Check your internet for docker resourse downloading (500 mg sourse will download)!!!
+
+Used in all Programs =>
++ Microservice = Writed
++ Docker Compose = Work
++ DataBase = Work
++ CleanArchitecture  = Writed
++ EntityFrameWork = Writed
++ Caching = Writed
+- Jwt - Not Writed
++ Docs minimalized
++ ApiGateWay writed but not work
++ FluentApi
+
+- BackGround Service !NotWrited!
+
+
 
 
 
