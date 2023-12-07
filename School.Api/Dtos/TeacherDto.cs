@@ -1,9 +1,8 @@
-﻿using MediatR;
-using School.Domain.Enums;
+﻿using School.Domain.Enums;
 
-namespace School.Application.UseCases.Teachers.Commands
+namespace School.Api.Dtos
 {
-    public class CreateTeacherCommand : IRequest<bool>
+    public class TeacherDto
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

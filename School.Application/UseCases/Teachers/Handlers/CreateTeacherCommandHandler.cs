@@ -21,7 +21,7 @@ namespace School.Application.UseCases.Teachers.Handlers
                 var teacher = new Teacher
                 {
                     FirstName = request.FirstName,
-                    LastName = request.LastNameName,
+                    LastName = request.LastName,
                     Title = request.Title,
                     SubjectsTaught = request.SubjectsTaught,
                     Level = request.Level,
