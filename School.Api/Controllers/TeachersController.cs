@@ -1,8 +1,11 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using School.Api.Dtos;
+using School.Application.UseCases.Students.Querries;
 using School.Application.UseCases.Teachers.Commands;
 using School.Application.UseCases.Teachers.Querries;
+using School.Domain.Entities;
 
 namespace School.Api.Controllers
 {
@@ -11,9 +14,11 @@ namespace School.Api.Controllers
     public class TeachersController : ControllerBase
     {
         private readonly IMediator _mediator;
-        public TeachersController(IMediator mediator)
+        private readonly IMemoryCache _memoryCache;
+        public TeachersController(IMediator mediator, IMemoryCache memoryCache)
         {
             _mediator = mediator;
+            _memoryCache = memoryCache;
         }
 
         [HttpPost]
@@ -41,8 +46,17 @@ namespace School.Api.Controllers
         {
             try
             {
-                var res = await _mediator.Send(new GetAllTeachersCommand());
-                return Ok(res);
+                //var res = await _mediator.Send(new GetAllTeachersCommand());
+                //return Ok(res);
+
+                var value = _memoryCache.Get("key");
+                if (value == null)
+                {
+                    _memoryCache.Set(
+                    key: "key",
+                        value: await _mediator.Send(new GetAllTeachersCommand()));
+                }
+                return Ok(_memoryCache.Get("key") as List<Teacher>);
             }
             catch (Exception ex) { return BadRequest(ex); }
         }
