@@ -66,7 +66,7 @@ namespace Marry.Api.Controllers
         }
 
         [HttpGet]
-        public async ValueTask<IActionResult> GetPersonalInformationByIdAsync()
+        public async ValueTask<IActionResult> GetPersonalInformationByIdAsync([FromForm] int id)
         {
             //var persons = await _mediator.Send(new GetPersonalInformationsCommand());
             //return Ok(persons);

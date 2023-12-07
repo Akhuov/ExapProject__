@@ -114,7 +114,7 @@ namespace Marry.Api.Controllers
                 {
                     _memoryCache.Set(
                     key: "Grooms_key",
-                        value: await _mediator.Send(new GetAllBridesCommand()));
+                        value: await _mediator.Send(new GetAllGroomsCommand()));
                 }
                 return Ok(_memoryCache.Get("Grooms_key") as List<Groom>);
             }

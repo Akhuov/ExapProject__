@@ -33,8 +33,9 @@ services:
       context: .
       dockerfile: OcelotGateAway/Dockerfile
     ports:
-    - 7080:80
+     - 9090:80
     networks:
-    - backend
+      - backend
+    
   
 

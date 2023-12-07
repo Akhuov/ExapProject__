@@ -1,20 +1,20 @@
 ﻿{
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/MarriageInformation/GetAllMarriageInformations",
-      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/api/PersonalInformations/GetAllPersonalInformations",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "marry.api",
           "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/api/GetAll",
+      "UpstreamPathTemplate": "/api/PersonalInformations/GetAllPersonalInformations",
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
       "DownstreamPathTemplate": "/api/Students/GetAllStudent",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "school.api",

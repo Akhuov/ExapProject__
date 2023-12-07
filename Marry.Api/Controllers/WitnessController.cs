@@ -1,6 +1,7 @@
 ﻿using Marry.Api.ViewModels;
 using Marry.Application.UseCases.Marriage.Queries;
 using Marry.Application.UseCases.Witness.Commands;
+using Marry.Application.UseCases.Witness.Queries;
 using Marry.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -42,16 +43,16 @@ namespace Marry.Api.Controllers
         [HttpGet]
         public async ValueTask<IActionResult> GetAllWitnessesAsync()
         {
-            //var persons = await _mediator.Send(new GetWitnessCommand());
-            //return Ok(persons);
             try
             {
+                //var persons = await _mediator.Send(new GetWitnessCommand());
+                //return Ok(persons);
                 var value = _memoryCache.Get("Witnesses_key");
                 if (value == null)
                 {
                     _memoryCache.Set(
                     key: "Witnesses_key",
-                        value: await _mediator.Send(new GetMarriageInformationCommand()));
+                        value: await _mediator.Send(new GetWitnessCommand()));
                 }
                 return Ok(_memoryCache.Get("Witnesses_key") as List<Witness>);
             }

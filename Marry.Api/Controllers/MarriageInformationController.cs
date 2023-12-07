@@ -63,21 +63,21 @@ namespace Marry.Api.Controllers
         }
 
         [HttpGet]
-        public async ValueTask<IActionResult> GetMarriageRegistrationByIdAsync(int id)
+        public async ValueTask<IActionResult> GetMarriageRegistrationByIdAsync([FromForm] int id)
         {
             try
             {
-                //var res = await _mediator.Send(new GetByIdMarriageInformationCommand { Id = id });
-                //return Ok(res);
+                var res = await _mediator.Send(new GetByIdMarriageInformationCommand { Id = id });
+                return Ok(res);
 
-                var value = _memoryCache.Get("Marriage_key");
-                if (value == null)
-                {
-                    _memoryCache.Set(
-                    key: "Marriage_key",
-                        value: await _mediator.Send(new GetByIdMarriageInformationCommand()));
-                }
-                return Ok(_memoryCache.Get("Marriage_key") as Marriage);
+                //var value = _memoryCache.Get("Marriage_key");
+                //if (value == null)
+                //{
+                //    _memoryCache.Set(
+                //    key: "Marriage_key",
+                //        value: await _mediator.Send(new GetByIdMarriageInformationCommand()));
+                //}
+                //return Ok(_memoryCache.Get("Marriage_key") as Marriage);
 
             }
             catch (Exception ex) { return Ok(ex.Message); }
