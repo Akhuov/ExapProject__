@@ -9,7 +9,7 @@
           "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/api/Marriages/GetAll",
+      "UpstreamPathTemplate": "/api/GetAll",
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
