@@ -6,7 +6,7 @@ using School.Domain.Entities;
 
 namespace School.Application.UseCases.Classes.Handles
 {
-    public class GetByIdClassCommandHandle : IRequestHandler<GetByIdClassCommand,Class>
+    public class GetByIdClassCommandHandle : IRequestHandler<GetByIdClassCommand, Class>
     {
         private readonly IApplicationDbContext _applicationDbContext;
 
@@ -15,7 +15,7 @@ namespace School.Application.UseCases.Classes.Handles
             _applicationDbContext = applicationDbContext;
         }
 
-        public async Task<Student> Handle(GetByIdClassCommand request, CancellationToken cancellationToken)
+        async Task<Class> IRequestHandler<GetByIdClassCommand, Class>.Handle(GetByIdClassCommand request, CancellationToken cancellationToken)
         {
             try
             {

@@ -16,4 +16,8 @@
     <ProjectReference Include="..\School.Domain\School.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UseCases\ClassRooms\" />
+  </ItemGroup>
+
 </Project>
