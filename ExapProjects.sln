@@ -21,19 +21,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "School", "School", "{EE06BB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{84BD1826-B907-4C88-BA5B-828111C770F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.Application", "School.Application\School.Application.csproj", "{17F6E627-1E9D-4904-844F-04326676F1F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "School.Application", "School.Application\School.Application.csproj", "{17F6E627-1E9D-4904-844F-04326676F1F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.Infrastructure", "School.Infrastructure\School.Infrastructure.csproj", "{23DEA2A5-9A5A-4ADE-AF82-7EC0C4E0BC86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "School.Infrastructure", "School.Infrastructure\School.Infrastructure.csproj", "{23DEA2A5-9A5A-4ADE-AF82-7EC0C4E0BC86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.Domain", "School.Domain\School.Domain.csproj", "{86A5918A-4071-4620-A8D5-63424777BA9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "School.Domain", "School.Domain\School.Domain.csproj", "{86A5918A-4071-4620-A8D5-63424777BA9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.Api", "School.Api\School.Api.csproj", "{AF1604E4-7C3D-47F0-9FDA-F8A401DBEF98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "School.Api", "School.Api\School.Api.csproj", "{AF1604E4-7C3D-47F0-9FDA-F8A401DBEF98}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublicTransport", "PublicTransport", "{CB13646E-9AAB-4720-8E3E-D737CB1DC7D4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DE0E4B74-06C9-4ECE-AD80-B74EA8C896CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicTransport.Api", "PublicTransport.Api\PublicTransport.Api.csproj", "{7C9E7F09-EEA6-481F-BE6A-B89247C76BF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublicTransport.Api", "PublicTransport.Api\PublicTransport.Api.csproj", "{7C9E7F09-EEA6-481F-BE6A-B89247C76BF0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EShop", "EShop", "{52B98DC4-437B-4940-ADBF-AE6784395378}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2B62EFE2-6BB4-4A03-ABB3-CFB11E25F070}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -98,6 +102,7 @@ Global
 		{AF1604E4-7C3D-47F0-9FDA-F8A401DBEF98} = {84BD1826-B907-4C88-BA5B-828111C770F2}
 		{DE0E4B74-06C9-4ECE-AD80-B74EA8C896CE} = {CB13646E-9AAB-4720-8E3E-D737CB1DC7D4}
 		{7C9E7F09-EEA6-481F-BE6A-B89247C76BF0} = {DE0E4B74-06C9-4ECE-AD80-B74EA8C896CE}
+		{2B62EFE2-6BB4-4A03-ABB3-CFB11E25F070} = {52B98DC4-437B-4940-ADBF-AE6784395378}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {088E9C9F-86F9-4B12-8AD6-12B305BA8345}

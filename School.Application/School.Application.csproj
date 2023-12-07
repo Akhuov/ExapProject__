@@ -16,10 +16,4 @@
     <ProjectReference Include="..\School.Domain\School.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="UseCases\Subjects\Commands\" />
-    <Folder Include="UseCases\Subjects\Handlers\" />
-    <Folder Include="UseCases\Subjects\Querries\" />
-  </ItemGroup>
-
 </Project>
