@@ -4,7 +4,9 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "marry.api": "StartDebugging"
+        "marry.api": "StartDebugging",
+        "school.api": "StartDebugging",
+        "ocelotgateaway": "StartDebugging"
       }
     }
   }

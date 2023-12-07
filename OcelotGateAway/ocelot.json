@@ -1,0 +1,31 @@
+﻿{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/MarriageInformation/GetAllMarriageInformations",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "marry.api",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Marriages/GetAll",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Students/GetAllStudent",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "school.api",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Students/GetAll",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:5000"
+  }
+}
